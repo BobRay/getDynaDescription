@@ -3,7 +3,7 @@ getDynaDescription Extra for MODx Revolution
 
 **Original Author:** Unknown
 
-**Revolution Author:** Bob Ray <http://bobsguides.com> [Bob's Guides] (http://bobsguides.com)
+**Revolution Author:** Bob Ray [Bob's Guides](http://bobsguides.com)
 
 
 
