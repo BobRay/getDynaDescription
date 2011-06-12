@@ -3,15 +3,29 @@
 <p>Using the resource's description field is the recommended method &mdash; it will give you the fastest page load times because it requires no database queries or extra processing since that field is already available on each page request.</p>
         
 <h3>Properties</h3>
-        
-<pre>
-    &amp;descriptionTv - (string) Name of the TV to hold a description for each page; default: dynaDescription.
-    &amp;maxWordCount - (int) Maximum number of words to use when grabbing the resource's content field ; default value: 25.
-    &amp;fullTag - (int 1/0/) - Set to 1 to create a full meta tag; default: 0
-    &amp;useResourceDescription - (int 1/0/) - Set to 1 to use the resource's Description field; default: 0
-    &amp;resourceId - (int) ID of another resource to get description from; default ''.
-</pre>
+<table class="properties">
+    <tbody>
+        <tr>
+            <th>Property</th><th>Description</th><th>Default</th>      
+        </tr>
 
+        <tr>
+            <td>&amp;descriptionTv</td><td>(string) Name of the TV to hold a description for each page</td><td>dynaDescription</td>
+        </tr>
+        <tr>
+            <td>&amp;maxWordCount</td><td>(int) Maximum number of words to use when grabbing the resource's content field</td><td>25</td>
+        </tr>
+        <tr>
+            <td>&amp;fullTag</td><td>(int 1/0/) - Set to 1 to create a full meta tag</td><td>0</td>
+        </tr>
+        <tr>
+            <td>&amp;useResourceDescription</td><td>(int 1/0/) - Set to 1 to use the resource's Description field</td><td>0</td>
+        </tr>
+        <tr>
+            <td>&amp;resourceId</td><td>(int) ID of another resource to get description from</td><td>''</td>
+        </tr>
+    </tbody>
+</table>
 <h3>How it Works</h3>
 <p>The snippet first checks the &amp;useResourceDescription property. If it is set to 1, the snippet uses the resource's description field and stops processing. If that property is set to 0 (or missing), the snippet checks for the TV, and if it is not empty, returns it's content. If nothing has been found yet, the snippet parses the content field of the resource and returns the number of words set in the &amp;maxWordCount property.</p>
 
@@ -50,11 +64,3 @@
 <p>Remember that the snippet will always use the beginning of the resource's content field if nothing else is found. That means that just by installing it, you can have a meaningful description Meta tag for every page of your site (assuming that you choose the option to insert the snippet tag in your Templates or have it there already).</p>
 
 <p>You have the option to use the &amp;resourceId property to specify the ID of another resource to get the description from. The process described above for finding that description will be followed, but the information will come from that other resource (its description field, its value of the TV, or its content field). I can't think of any reason why you'd want to do this, but it was an option in the original snippet (though note that I've changed the name of the property).</p>
-
-
-
-
-
-
-
-
