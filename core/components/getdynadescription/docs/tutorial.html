@@ -1,0 +1,60 @@
+<p>The getDynaDescription snippet creates a description Meta tag in the &lt;head&gt; section of your Template(s). You have the option of creating the full Meta tag or just the content part of it. Depending on the properties set, getDynaDescription will create the description from a TV, from the description field of the resource, or from the beginning of the content field of the resource. </p>
+        
+<p>Using the resource's description field is the recommended method &mdash; it will give you the fastest page load times because it requires no database queries or extra processing since that field is already available on each page request.</p>
+        
+<h3>Properties</h3>
+        
+<pre>
+    &amp;descriptionTv - (string) Name of the TV to hold a description for each page; default: dynaDescription.
+    &amp;maxWordCount - (int) Maximum number of words to use when grabbing the resource's content field ; default value: 25.
+    &amp;fullTag - (int 1/0/) - Set to 1 to create a full meta tag; default: 0
+    &amp;useResourceDescription - (int 1/0/) - Set to 1 to use the resource's Description field; default: 0
+    &amp;resourceId - (int) ID of another resource to get description from; default ''.
+</pre>
+
+<h3>How it Works</h3>
+<p>The snippet first checks the &amp;useResourceDescription property. If it is set to 1, the snippet uses the resource's description field and stops processing. If that property is set to 0 (or missing), the snippet checks for the TV, and if it is not empty, returns it's content. If nothing has been found yet, the snippet parses the content field of the resource and returns the number of words set in the &amp;maxWordCount property.</p>
+
+<p>If the &amp;fullTag property is set to 1, the snippet will return a complete Meta tag containing the content described above. If not, it just returns the content. In the first case, the &lt;head;gt; section of your Template should contain something like this:</p>
+
+<pre>
+    [<!--- -->[<!--- -->!getDynaDescription . . . ]<!--- -->]
+</pre>
+<p>In the second case, you'd need something like this: </p>
+
+<pre>
+    &lt;meta name="description" content="[<!--- -->[<!--- -->!getDynaDescription . . . ]<!--- -->]"&gt;
+</pre>
+
+<p>The first version (with &amp;fullTag=`1`) is the recommended one. It is more reliable and requires less work for you. The second version (with &amp;fullTag=`0`) mimics the behavior of the original Evolution snippet.</p>
+
+<h3>Installing getDynaDescription</h3>
+
+<p>You will be presented with a number of options during the install. This may look confusing, but it's really fairly simple.</p>
+
+<p>The recommended method is to use the resource's Description field for your Meta tags. If that will work for you, just check that option, select the option to insert the tag, and select the Templates you'd like to have the tag in. Note that if you already have description Meta tags, you should remove them first.</p>
+
+<p>Another option, if you already have description Meta tags, is to just replace the content part of the tag with the snippet tag (with &amp;fullTag=`0`). In that case, do *not* check the box to insert tags in the Template(s) or the fullTag checkbox. You may still wish to select the options to use the resource's Description field and/or create the TV and select Templates to attach it to.</p>
+
+<p>If you don't have existing description Meta tags (or will remove them) and would rather use the TV instead of the resource's description field, choose the options to create the TV, select the Templates to attach it to, and choose the option to insert the tag in the selected Templates.</p>
+
+<p>You can choose the form of the getDynaDescription snippet tag using the radio options near the bottom of the page. Be sure you have selected Templates above or no tags will be inserted. If you change your mind about the tag style later, you can reinstall the snippet and it will replace the existing tags in the Templates you select.</p>
+
+<p>During the install, you can also set the value of the &amp;maxWordCount property, though the default (25) is a good choice for most search engines.</p>
+
+<p>If you change the name of the TV used to hold the description, you'll have to uninstall it manually because the uninstall script won't be able to find it.</p>
+
+<p>Note that setting the &amp;maxWordCount, &amp;useResourceDescription, and &amp;fullTag options during the install does *not* change the values in the snippet's default properties. Instead, the values you set will be added as properties in any tags created during the install. If you create new Templates and add snippet tags to them later, you'll need to set those properties in the tags (or cut and paste the tags from an existing Template). This was done so that the default properties allow the snippet to perform as the original Evolution snippet did.</p>
+
+<h3>Final Words</h3>
+<p>Remember that the snippet will always use the beginning of the resource's content field if nothing else is found. That means that just by installing it, you can have a meaningful description Meta tag for every page of your site (assuming that you choose the option to insert the snippet tag in your Templates or have it there already).</p>
+
+<p>You have the option to use the &amp;resourceId property to specify the ID of another resource to get the description from. The process described above for finding that description will be followed, but the information will come from that other resource (its description field, its value of the TV, or its content field). I can't think of any reason why you'd want to do this, but it was an option in the original snippet (though note that I've changed the name of the property).</p>
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+Changelog for getDynaDescription
+
+getDynaDescription 1.0.0
+------------------------
+Initial Version
