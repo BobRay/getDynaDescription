@@ -27,20 +27,20 @@
     </tbody>
 </table>
 <h3>How it Works</h3>
-<p>The snippet first checks the &amp;useResourceDescription property. If it is set to 1, the snippet uses the resource's description field and stops processing. If that property is set to 0 (or missing), the snippet checks for the TV, and if it is not empty, returns it's content. If nothing has been found yet, the snippet parses the content field of the resource and returns the number of words set in the &amp;maxWordCount property.</p>
+<p>The snippet first checks the <code>&useResourceDescription</code> property. If it is set to 1, the snippet uses the resource's description field and stops processing. If that property is set to 0 (or missing), the snippet checks for the TV, and if it is not empty, returns it's content. If nothing has been found yet, the snippet parses the content field of the resource and returns the number of words set in the <code>&maxWordCount</code> property.</p>
 
-<p>If the &amp;fullTag property is set to 1, the snippet will return a complete Meta tag containing the content described above. If not, it just returns the content. In the first case, the &lt;head;gt; section of your Template should contain something like this:</p>
+<p>If the <code>&fullTag</code> property is set to 1, the snippet will return a complete Meta tag containing the content described above. If not, it just returns the content. In the first case, the <code><head></code> section of your Template should contain something like this:</p>
 
-<pre>
-    [<!--- -->[<!--- -->!getDynaDescription . . . ]<!--- -->]
-</pre>
+<pre><fixedpre>
+[[!getDynaDescription . . . ]]
+</fixedpre></pre>
 <p>In the second case, you'd need something like this: </p>
 
-<pre>
-    &lt;meta name="description" content="[<!--- -->[<!--- -->!getDynaDescription . . . ]<!--- -->]"&gt;
-</pre>
+<pre><fixedpre>
+<meta name="description" content="[[!getDynaDescription . . . ]">
+</fixedpre></pre>
 
-<p>The first version (with &amp;fullTag=`1`) is the recommended one. It is more reliable and requires less work for you. The second version (with &amp;fullTag=`0`) mimics the behavior of the original Evolution snippet.</p>
+<p>The first version (with <code>&fullTag=`1`</code>) is the recommended one. It is more reliable and requires less work for you. The second version (with <code>&fullTag=`0`</code>) mimics the behavior of the original Evolution snippet.</p>
 
 <h3>Installing getDynaDescription</h3>
 
@@ -48,19 +48,21 @@
 
 <p>The recommended method is to use the resource's Description field for your Meta tags. If that will work for you, just check that option, select the option to insert the tag, and select the Templates you'd like to have the tag in. Note that if you already have description Meta tags, you should remove them first.</p>
 
-<p>Another option, if you already have description Meta tags, is to just replace the content part of the tag with the snippet tag (with &amp;fullTag=`0`). In that case, do *not* check the box to insert tags in the Template(s) or the fullTag checkbox. You may still wish to select the options to use the resource's Description field and/or create the TV and select Templates to attach it to.</p>
+<p>Another option, if you already have description Meta tags, is to just replace the content part of the tag with the snippet tag (with <code>&fullTag=`0`</code>). In that case, do *not* check the box to insert tags in the Template(s) or the fullTag checkbox. You may still wish to select the options to use the resource's Description field and/or create the TV and select Templates to attach it to.</p>
 
 <p>If you don't have existing description Meta tags (or will remove them) and would rather use the TV instead of the resource's description field, choose the options to create the TV, select the Templates to attach it to, and choose the option to insert the tag in the selected Templates.</p>
 
 <p>You can choose the form of the getDynaDescription snippet tag using the radio options near the bottom of the page. Be sure you have selected Templates above or no tags will be inserted. If you change your mind about the tag style later, you can reinstall the snippet and it will replace the existing tags in the Templates you select.</p>
 
-<p>During the install, you can also set the value of the &amp;maxWordCount property, though the default (25) is a good choice for most search engines.</p>
+<p>During the install, you can also set the value of the <code>&maxWordCount</code> property, though the default (25) is a good choice for most search engines.</p>
 
 <p>If you change the name of the TV used to hold the description, you'll have to uninstall it manually because the uninstall script won't be able to find it.</p>
 
-<p>Note that setting the &amp;maxWordCount, &amp;useResourceDescription, and &amp;fullTag options during the install does *not* change the values in the snippet's default properties. Instead, the values you set will be added as properties in any tags created during the install. If you create new Templates and add snippet tags to them later, you'll need to set those properties in the tags (or cut and paste the tags from an existing Template). This was done so that the default properties allow the snippet to perform as the original Evolution snippet did.</p>
+<p>Note that setting the <code>&maxWordCount</code>, <code>&useResourceDescription</code>, and <code>&fullTag</code> options during the install does *not* change the values in the snippet's default properties. Instead, the values you set will be added as properties in any tags created during the install. If you create new Templates and add snippet tags to them later, you'll need to set those properties in the tags (or cut and paste the tags from an existing Template). This was done so that the default properties allow the snippet to perform as the original Evolution snippet did.</p>
 
 <h3>Final Words</h3>
 <p>Remember that the snippet will always use the beginning of the resource's content field if nothing else is found. That means that just by installing it, you can have a meaningful description Meta tag for every page of your site (assuming that you choose the option to insert the snippet tag in your Templates or have it there already).</p>
 
-<p>You have the option to use the &amp;resourceId property to specify the ID of another resource to get the description from. The process described above for finding that description will be followed, but the information will come from that other resource (its description field, its value of the TV, or its content field). I can't think of any reason why you'd want to do this, but it was an option in the original snippet (though note that I've changed the name of the property).</p>
+<p>You have the option to use the <code>&resourceId</code> property to specify the ID of another resource to get the description from. The process described above for finding that description will be followed, but the information will come from that other resource (its description field, its value of the TV, or its content field). I can't think of any reason why you'd want to do this, but it was an option in the original snippet (though note that I've changed the name of the property).</p>
+
+<p>&nbsp;</p>
