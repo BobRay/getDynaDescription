@@ -19,14 +19,14 @@
  * @package getdynadescription
  * @author Unknown; Revolution Author Bob Ray <http://bobsguides.com>
  *
- * @version Version 1.0.0-rc-1
+ * @version Version 1.0.1-pl
  * 6/9/11
  *
  * Description
  *
 
 /**
-  @version Version 1.0.0-rc-1
+  @version Version 1.0.1-pl
 
  /** getDynaDecription properties
  * &package getdynadescription
