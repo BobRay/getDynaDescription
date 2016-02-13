@@ -68,23 +68,29 @@ if (!function_exists(getDynaDescription)) {
   function getDynaDescription($text='',$excerpt_length=25)
   {
     global $modx;
-    $text = str_replace(']]>', ']]&gt;', $text);
+
     /* remove line breaks */
     $text = str_replace("\n",' ',$text);
     $text = str_replace("\r",' ',$text);
-    /* entify chars */
-    $text = htmlEntities($text);
+
     /* remove special MODx tags - chunks, snippets, etc.
      * If we don't do this they'll end up expanded in the description.
      */
+    $text = preg_replace("/\\[\\[([^\\[\\]]++|(?R))*?\\]\\]/s", '', $text);
+
+    /* remove remaining html tags, javascript tags and numeric entities */
     $text = $modx->stripTags($text);
+
+    /* entify special chars (especially quotes, since the description tag attributes are in quotes */
+    $text = htmlspecialchars($text, ENT_QUOTES, $modx->getOption('modx_charset', null, 'UTF-8'));
+
     $words = preg_split ("/\s+/", $text,$excerpt_length+1);
     if (count($words) > $excerpt_length) {
       array_pop($words);
       array_push($words, '...');
       $text = implode(' ', $words);
     }
-    return trim(stripslashes($text));
+    return trim($text);
   }
 }
 
@@ -107,7 +113,7 @@ if ($scriptProperties['useResourceDescription']) {
 if (empty($output)) {
   /* still empty, use the content field */
 
-    $content = $resource->getContent();
+    $content = $modx->resource->get('content');
     $output =  getDynaDescription($content,$maxWordCount);
 }
 
@@ -117,4 +123,3 @@ if ($fullTag == true) {
 }
 
 return $output;
-?>
