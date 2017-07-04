@@ -2,7 +2,8 @@
 
 /**
  * Default properties for the getdynadescription snippet
- * @author Bob Ray <http:bobsguides.com>
+ * @author Bob Ray <https://bobsguides.com>
+ * @copyright Bob Ray <https://bobsguides.com>
  * 6/9/11
  *
  * @package getdynadescription

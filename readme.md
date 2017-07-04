@@ -1,13 +1,13 @@
-getDynaDescription Extra for MODx Revolution
+getDynaDescription Extra for MODX Revolution
 ============================================
 
 **Original Author:** Unknown
 
-**Revolution Author:** Bob Ray [Bob's Guides](http://bobsguides.com)
+**Revolution Author:** Bob Ray [Bob's Guides](https://bobsguides.com)
 
 
 
-Documentation is available at [Bob's Guides] (http://bobsguides.com/getdynadescription-snippet-tutorial.html)
+Documentation is available at [Bob's Guides] (https://bobsguides.com/getdynadescription-snippet-tutorial.html)
 
 The getDynaDescription snippet creates a description Meta tag in the &lt;head&gt; section of your template(s). Depending on the properties set, it will create the description from a TV, from the description field of the resource, or from the beginning of the content field of the resource. If the TV and the description field are empty, it will always use the beginning of the content field. That means that just by installing it, you can have a meaningful description Meta tag for every page of your site (assuming that you choose the option to insert the snippet tag in your templates or have it there already).
 

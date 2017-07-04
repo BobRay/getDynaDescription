@@ -17,7 +17,7 @@
  * Suite 330, Boston, MA 02111-1307 USA
  *
  * @package getdynadescription
- * @author Unknown; Revolution Author Bob Ray <http://bobsguides.com>
+ * @author Unknown; Revolution Author Bob Ray <https://bobsguides.com>
  *
  * @version Version 1.0.1-pl
  * 6/9/11
@@ -73,7 +73,7 @@ if (!function_exists(getDynaDescription)) {
     $text = str_replace("\n",' ',$text);
     $text = str_replace("\r",' ',$text);
 
-    /* remove special MODx tags - chunks, snippets, etc.
+    /* remove special MODX tags - chunks, snippets, etc.
      * If we don't do this they'll end up expanded in the description.
      */
     $text = preg_replace("/\\[\\[([^\\[\\]]++|(?R))*?\\]\\]/s", '', $text);

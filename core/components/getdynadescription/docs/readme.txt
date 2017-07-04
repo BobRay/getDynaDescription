@@ -2,8 +2,8 @@
 Snippet: getDynaDescription
 ----------------------------
 Original Author: Unknown
-Revolution Author: Bob Ray <http:bobsguides.com>
+Revolution Author: Bob Ray <https://bobsguides.com>
 
-Official Documentation: http://bobsguides.com/getdynadescription-tutorial.html
+Official Documentation: https://bobsguides.com/getdynadescription-tutorial.html
 Bugs and Feature Requests: https://github.com/BobRay/getdynadescription
-Questions: http://modxcms.com/forums
+Questions: https://forums.modx.com
