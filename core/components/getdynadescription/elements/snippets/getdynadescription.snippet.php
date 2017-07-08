@@ -18,6 +18,7 @@
  *
  * @package getdynadescription
  * @author Unknown; Revolution Author Bob Ray <https://bobsguides.com>
+ * @Copyright 2011-2017 Bob Ray
  *
  * @version Version 1.0.1-pl
  * 6/9/11
