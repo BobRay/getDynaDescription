@@ -1,5 +1,9 @@
 Changelog for getDynaDescription
 
+getDynaDescription 1.0.2-pl
+------------------------
+Fix PHP warning (thanks to Jako)
+
 getDynaDescription 1.0.1-pl
 ------------------------
 Fix bug with nested MODX tags (thanks to Jako)

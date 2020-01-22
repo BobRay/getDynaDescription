@@ -2,7 +2,7 @@
 /**
  * getdynadescription Build Script
  *
- * Copyright 2011-2017 Bob Ray <https://bobsguides.com>
+ * Copyright 2011-2020 Bob Ray <https://bobsguides.com>
  * Author Bob Ray <https://bobsguides.com>
  *
  * getdynadescription is free software; you can redistribute it and/or modify it
@@ -32,26 +32,29 @@
 /* See the getdynadescription/core/docs/tutorial.html file for
  * more detailed information about using the package
  *
- * Search and replace tasks:
- * (edit the resource and element names first if they have
- * different names than your package.)
- *
  * getdynadescription
- * getdynadescription
- * Bob Ray 
+ * Copyright 2011-2020 Bob Ray
  * Bob's Guides
  * https://bobsguides.com
  * 
  * Description: Create a description Meta tag
  *
- * 6/9/11
- * 2011
+ * Created 6/9/11
+ *
  */
+
+/* Prevent PHP complaints during build */
+if (!defined('MODX_BASE_URL')) {
+    define('MODX_BASE_URL', 'http://localhost/addons/');
+    define('MODX_MANAGER_URL', 'http://localhost/addons/manager/');
+    define('MODX_ASSETS_URL', 'http://localhost/addons/assets/');
+    define('MODX_CONNECTORS_URL', 'http://localhost/addons/connectors/');
+}
 
 /* Set package info be sure to set all of these */
 define('PKG_NAME','getDynaDescription');
 define('PKG_NAME_LOWER','getdynadescription');
-define('PKG_VERSION','1.0.1');
+define('PKG_VERSION','1.0.2');
 define('PKG_RELEASE','pl');
 define('PKG_CATEGORY','getDynaDescription');
 
