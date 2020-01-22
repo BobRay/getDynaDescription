@@ -4,8 +4,8 @@
  * Script to interact with user during getdynadescription package install
  *
  * Copyright 2011-2017 Bob Ray <https://bobsguides.com>
- * @author Bob Ray <https://bobsguides.com>
- * 6/9/11
+ * @author Bob Ray 2011-2020 <https://bobsguides.com>
+ * Created 6/9/11
  *
  *  is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free

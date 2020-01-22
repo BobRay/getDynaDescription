@@ -3,9 +3,9 @@
 /**
  * getdynadescription resolver script - runs on install.
  *
- * Copyright 2011-2017 Bob Ray <https://bobsguides.com>
+ * Copyright 2011-2020 Bob Ray <https://bobsguides.com>
  * @author Bob Ray <https://bobsguides.com>
- * 6/9/11
+ * Created 6/9/11
  *
  * getdynadescription is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
