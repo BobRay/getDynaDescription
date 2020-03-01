@@ -1,5 +1,10 @@
 Changelog for getDynaDescription
 
+getDynaDescription 1.0.3-pl
+------------------------
+Style changes (thanks to Jako)
+
+
 getDynaDescription 1.0.2-pl
 ------------------------
 Fix PHP warning (thanks to Jako)
