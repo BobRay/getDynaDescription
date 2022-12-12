@@ -46,7 +46,7 @@
 /* getdynadescription snippet code */
 
 /* Can't see why anyone would want this, but it's in the original snippet - BR */
-if ( empty($scriptProperties['resourceId'])) {
+if (!empty($scriptProperties['resourceId'])) {
     $resource = $modx->getObject('modResource', $scriptProperties['resourceId']);
     if (! $resource) {
         return '';
