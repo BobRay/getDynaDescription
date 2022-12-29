@@ -33,13 +33,13 @@
  * more detailed information about using the package
  *
  * getdynadescription
- * Copyright 2011-2020 Bob Ray
+ * Copyright 2011-2023 Bob Ray
  * Bob's Guides
  * https://bobsguides.com
  * 
  * Description: Create a description Meta tag
  *
- * Created 6/9/11
+ * Created 6/9/2011
  *
  */
 
@@ -54,7 +54,7 @@ if (!defined('MODX_BASE_URL')) {
 /* Set package info be sure to set all of these */
 define('PKG_NAME','getDynaDescription');
 define('PKG_NAME_LOWER','getdynadescription');
-define('PKG_VERSION','1.0.3');
+define('PKG_VERSION','1.0.4');
 define('PKG_RELEASE','pl');
 define('PKG_CATEGORY','getDynaDescription');
 
