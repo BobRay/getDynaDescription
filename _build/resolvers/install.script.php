@@ -35,6 +35,9 @@
  */
 
 $modx =& $object->xpdo;
+$prefix = $modx->getVersionData()['version'] >= 3
+    ? 'MODX\Revolution\\'
+    : '';
 
 /* set to true to connect property sets to elements */
 
@@ -45,11 +48,11 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
     /* This code will execute during an install */
     case xPDOTransport::ACTION_INSTALL:
         if ($modx->getOption('createTv', $options, false)) {
-            $category = $modx->getObject('modCategory', array('category'=>'getDynaDescription'));
+            $category = $modx->getObject($prefix . 'modCategory', array('category'=>'getDynaDescription'));
             if (! $category) {
                 $modx->log(xPDO::LOG_LEVEL_INFO,'Could not retrieve category object: ' . $category);
             }
-            $templateVariables[1]= $modx->newObject('modTemplateVar');
+            $templateVariables[1]= $modx->newObject($prefix . 'modTemplateVar');
             $templateVariables[1]->fromArray(array(
                 'id' => 1,
                 'type' => 'textfield',
@@ -72,7 +75,7 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
             if (!empty ($templateNames) ) {
                 $modx->log(xPDO::LOG_LEVEL_INFO,'Attempting to attach TV to Templates');
                 $ok = true;
-                $tv = $modx->getObject('modTemplateVar', array('name'=> 'dynaDescription'));
+                $tv = $modx->getObject($prefix . 'modTemplateVar', array('name'=> 'dynaDescription'));
                 if ($tv) {
                     $tvId = $tv->get('id');
                 } else {
@@ -85,10 +88,10 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
                 /* Add TV to selected Templates */
                 if ($tv) {
                     foreach($templateNames as $templateName) {
-                        $template = $modx->getObject('modTemplate', array('templatename'=>$templateName));
+                        $template = $modx->getObject($prefix . 'modTemplate', array('templatename'=>$templateName));
                         if ($template) {
                             $templateId = $template->get('id');
-                            $tvt = $modx->newObject('modTemplateVarTemplate');
+                            $tvt = $modx->newObject($prefix . 'modTemplateVarTemplate');
 
                             $r1 = $tvt->set('templateid', $templateId);
                                 $r2 = $tvt->set('tmplvarid', $tvId);
@@ -143,7 +146,7 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
             if (!empty ($templateNames) ) {
 
                 foreach($templateNames as $templateName) {
-                        $template = $modx->getObject('modTemplate', array('templatename'=>$templateName));
+                        $template = $modx->getObject($prefix . 'modTemplate', array('templatename'=>$templateName));
                         if ($template) {
                             $templateContent = $template->getContent();
                             if (strstr($templateContent,'getDynaDescription')) {
@@ -176,21 +179,21 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_UNINSTALL:
         $success = true;
         $modx->log(xPDO::LOG_LEVEL_INFO,'Uninstalling . . .');
-        $category = $modx->getObject('modCategory', array('category'=>'getDynaDescription'));
+        $category = $modx->getObject($prefix . 'modCategory', array('category'=>'getDynaDescription'));
         if ($category) {
             if ($category->remove()) {
                 $modx->log(xPDO::LOG_LEVEL_INFO,'Removed getDynaDescription category');
             }
         }
 
-        $tv = $modx->getObject('modTemplateVar', array('name'=>'dynaDescription'));
+        $tv = $modx->getObject($prefix . 'modTemplateVar', array('name'=>'dynaDescription'));
         if ($tv) {
             if ($tv->remove()) {
                 $modx->log(xPDO::LOG_LEVEL_INFO,'Removed dynaDescription TV');
             }
         }
         /* Delete tags from templates */
-        $templates = $modx->getCollection('modTemplate');
+        $templates = $modx->getCollection($prefix . 'modTemplate');
         if ($templates) {
             $modx->log(xPDO::LOG_LEVEL_INFO,'Attempting to remove tags from templates');
             $count = 0;

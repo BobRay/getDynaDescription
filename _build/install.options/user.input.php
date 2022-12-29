@@ -48,7 +48,11 @@
  * component.
  */
 
-$templates = $modx->getCollection('modTemplate');
+/** @var modX $modx */
+$prefix = $modx->getVersionData()['version'] >= 3
+    ? 'MODX\Revolution\\'
+    : '';
+$templates = $modx->getCollection($prefix . 'modTemplate');
 $output = '<p>The getDynaDescription snippet will allow you to create description Meta tags by placing a tag in your template(s). The snippet can use the value of the dynaDescription Template variable, the description resource field, or the beginning of the resource content for the Meta tag.</p><br />';
 $output .= '<p>If you would like to have the dynaDescription template variable created automatically and attached to any of your templates, check the appropriate boxes below. If you plan to use the resource description field or the resource content, you won\'t need the TV.</p><br />';
 
