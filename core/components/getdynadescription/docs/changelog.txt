@@ -1,18 +1,23 @@
 Changelog for getDynaDescription
 
+getDynaDescription 1.0.4-pl
+------------------------
+ - Fix bug with test for empty resource identifier (thanks to Jako)
+ - Modifications for MODX 3
+
 getDynaDescription 1.0.3-pl
 ------------------------
-Style changes (thanks to Jako)
+ - Style changes (thanks to Jako)
 
 
 getDynaDescription 1.0.2-pl
 ------------------------
-Fix PHP warning (thanks to Jako)
+ - Fix PHP warning (thanks to Jako)
 
 getDynaDescription 1.0.1-pl
 ------------------------
-Fix bug with nested MODX tags (thanks to Jako)
+ - Fix bug with nested MODX tags (thanks to Jako)
 
 getDynaDescription 1.0.0
 ------------------------
-Initial Version
+ - Initial Version
