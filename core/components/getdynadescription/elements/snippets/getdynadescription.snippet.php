@@ -46,8 +46,15 @@
 /* getdynadescription snippet code */
 
 /* Can't see why anyone would want this, but it's in the original snippet - BR */
+
+/** @var modX $modx */
+
+$prefix = $modx->getVersionData()['version'] >= 3
+    ? 'MODX\Revolution\\'
+    : '';
+
 if (!empty($scriptProperties['resourceId'])) {
-    $resource = $modx->getObject('modResource', $scriptProperties['resourceId']);
+    $resource = $modx->getObject($prefix . 'modResource', $scriptProperties['resourceId']);
     if (! $resource) {
         return '';
     }
@@ -105,7 +112,7 @@ if ($scriptProperties['useResourceDescription']) {
   /* Try the TV */
     if (!empty ($scriptProperties['descriptionTv'])) {
 
-        $tv = $modx->getObject('modTemplateVar',array('name'=>$scriptProperties['descriptionTv']));
+        $tv = $modx->getObject($prefix . 'modTemplateVar',array('name'=>$scriptProperties['descriptionTv']));
         $output = $tv? $tv->getValue($pid) : '';
     }
 }
@@ -118,6 +125,7 @@ if (empty($output)) {
 }
 
 /* Create the full tag if &fullTag is set */
+/** @var bool $fullTag */
 if ($fullTag == true) {
        $output = '<meta name="description" content="' . $output . '">' . "\n";
 }
